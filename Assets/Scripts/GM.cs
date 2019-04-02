@@ -14,7 +14,12 @@ public class GM : MonoBehaviour
     /// <summary>
     /// Lista de la compra.
     /// </summary>
-    public static List<string> ShopList { get; set; } = new List<string>();
+    public List<string> ShopList { get; set; } = new List<string>();
+
+    /// <summary>
+    /// Nombre del objeto de la lista actual.
+    /// </summary>
+    public string CurrentObject { get; set; }
 
     #endregion
 
