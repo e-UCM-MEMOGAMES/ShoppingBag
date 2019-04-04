@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -115,6 +116,30 @@ namespace Assets.Scripts
         public void WrongShop(ShopObject obj)
         {
             WrongList.Add(obj);
+        }
+
+        public string CorrectListResult()
+        {
+            if (CorrectList.Count == 0) return null;
+
+            StringBuilder sb = new StringBuilder();
+            CorrectList.ForEach(obj =>
+            {
+                sb.AppendLine(string.Concat("- ", obj.Name));
+            });
+            return sb.ToString();
+        }
+
+        public string WrongListResult()
+        {
+            if (WrongList.Count == 0) return null;
+
+            StringBuilder sb = new StringBuilder();
+            WrongList.ForEach(obj =>
+            {
+                sb.AppendLine(string.Concat("- ", obj.Name));
+            });
+            return sb.ToString();
         }
 
         #endregion
