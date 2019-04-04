@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,10 @@ namespace Assets.Scripts
     public class LevelSelector : MonoBehaviour
     {
         #region Atributos
+        /// <summary>
+        /// Expresión regular para quitar los acentos.
+        /// </summary>
+        private Regex RegNoAccent { get; } = new Regex("[^a-zA-Z0-9 ]");
 
         #endregion
 
@@ -28,6 +33,7 @@ namespace Assets.Scripts
         /// </summary>
         public void Play()
         {
+            GM.Gm.InitList();
             LoadShopList();
             SceneManager.LoadScene("Level1");
         }
@@ -54,8 +60,12 @@ namespace Assets.Scripts
                     GM.Gm.ShopList.Add(new ShopObject(listObj[0], GetShopType(listObj[1])));
                 }
             });
+            try
+            {
+                GM.Gm.NextObject();
+            }
+            catch (Exception) { }
 
-            GM.Gm.CurrentObject = GM.Gm.ShopList.First();
         }
 
         /// <summary>
@@ -65,24 +75,21 @@ namespace Assets.Scripts
         /// <returns>Tipo de la tienda.</returns>
         private ShopType GetShopType(string type)
         {
-            switch (type.ToUpper())
+            string normalType = type.Normalize(NormalizationForm.FormD);
+            string typeWithout = RegNoAccent.Replace(normalType, string.Empty).ToUpper();
+            switch (typeWithout)
             {
                 case "CARNICERIA":
-                case "CARNICERÍA":
                     return ShopType.CARNICERIA;
                 case "ELECTRODOMESTICOS":
-                case "ELECTRODOMÉSTICOS":
                     return ShopType.ELECTRODOMESTICOS;
                 case "FARMACIA":
                     return ShopType.FARMACIA;
                 case "PANADERIA":
-                case "PANADERÍA":
                     return ShopType.PANADERIA;
                 case "FRUTERIA":
-                case "FRUTERÍA":
                     return ShopType.FRUTERIA;
                 case "PASTELERIA":
-                case "PASTELERÍA":
                     return ShopType.PASTELERIA;
                 default:
                     return ShopType.PESCADERIA;
