@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Assets.Scripts.ShopTypeEnum;
 
 namespace Assets.Scripts
 {
@@ -12,31 +13,29 @@ namespace Assets.Scripts
         private ShopType _shopType;
         [SerializeField]
         private ShopObject _shopObject;
-        private GameObject _gameObj;
         #endregion
 
         #region Constantes
         public ShopType ShopType { get => _shopType; set => _shopType = value; }
-        public ShopObject ShopObject { get => _shopObject; set => _shopObject = value; }
-        //public GameObject ShopGameObj;
-        //public ShopObject ShopObjectPruebas;
+        public ShopObject ShopObject { get => _shopObject; set => _shopObject = value; }  
         #endregion
 
         #region Eventos
         // Start is called before the first frame update
         void Start()
         {
-            Debug.Log("##### Start");
-            Debug.Log("##### ShopObject - " + ShopObject.Name);
-            if (ShopObject == GM.Gm.CurrentObject)
+            //Debug.Log("############### Start");
+            Debug.Log("############### ShopObject - " + ShopObject.name);
+            Debug.Log("############### CurrentObject - " + GM.Gm.CurrentObject.name);
+            if (ShopObject.name == GM.Gm.CurrentObject.name)
             {
                 gameObject.SetActive(true);
-                Debug.Log("##### Start true");
+                Debug.Log("############### Start true");
             }
             else
             {
                 gameObject.SetActive(false);
-                Debug.Log("##### Start false");
+                Debug.Log("############### Start false");
             }
         }
 
@@ -52,7 +51,7 @@ namespace Assets.Scripts
                 throw new System.ArgumentNullException(nameof(collision));
             else
             {
-                Debug.Log("##### Collision enter");
+                Debug.Log("############### Collision enter");
                 if (collision.gameObject.Equals(ShopType))        
                     GM.Gm.CorrectShop(ShopObject);                     
                 else
@@ -68,7 +67,7 @@ namespace Assets.Scripts
             else
             {
                if(GM.Gm.ShopList.Count == 0)
-                    SceneManager.LoadScene("Result");
+                    SceneManager.LoadScene("############### Result");
             }
         }
 

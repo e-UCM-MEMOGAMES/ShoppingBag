@@ -123,8 +123,9 @@ GameObject:
   - component: {fileID: 83344544}
   - component: {fileID: 83344545}
   - component: {fileID: 83344546}
+  - component: {fileID: 83344547}
   m_Layer: 0
-  m_Name: pescado
+  m_Name: Sardina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,6 +206,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopType: 6
+  _shopObject: {fileID: 83344547}
+--- !u!114 &83344547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83344543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7affe630bb994394ba3dce184acaf479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171760842
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,8 +841,9 @@ GameObject:
   - component: {fileID: 916382928}
   - component: {fileID: 916382929}
   - component: {fileID: 916382930}
+  - component: {fileID: 916382931}
   m_Layer: 0
-  m_Name: pera
+  m_Name: Pera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,6 +924,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopType: 3
+  _shopObject: {fileID: 916382931}
+--- !u!114 &916382931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916382927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7affe630bb994394ba3dce184acaf479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &935996968
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,8 +948,9 @@ GameObject:
   - component: {fileID: 935996969}
   - component: {fileID: 935996970}
   - component: {fileID: 935996971}
+  - component: {fileID: 935996972}
   m_Layer: 0
-  m_Name: naranja
+  m_Name: Naranja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,6 +1031,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopType: 3
+  _shopObject: {fileID: 935996972}
+--- !u!114 &935996972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935996968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7affe630bb994394ba3dce184acaf479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1061503789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,8 +1055,9 @@ GameObject:
   - component: {fileID: 1061503790}
   - component: {fileID: 1061503791}
   - component: {fileID: 1061503792}
+  - component: {fileID: 1061503793}
   m_Layer: 0
-  m_Name: pan_de_molde
+  m_Name: Pan de molde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,6 +1138,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopType: 4
+  _shopObject: {fileID: 1061503793}
+--- !u!114 &1061503793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061503789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7affe630bb994394ba3dce184acaf479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1254773900
 GameObject:
   m_ObjectHideFlags: 0

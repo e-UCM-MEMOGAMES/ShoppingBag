@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Assets.Scripts.ShopTypeEnum;
 
 namespace Assets.Scripts
 {
@@ -53,8 +54,9 @@ namespace Assets.Scripts
 
             // La lista estará formada por líneas de tipo -> {nombre del objeto}, {nombre de la tienda}
             list.ForEach(obj =>
-            {
+            {           
                 List<string> listObj = new List<string>(obj.Split(',').Select(o => o.Trim()));
+                Debug.Log("&&&&&&&&&&&&&&& List : " + listObj[0]);
                 if (listObj.Count == 2)
                 {
                     GM.Gm.ShopList.Add(new ShopObject(listObj[0], GetShopType(listObj[1])));
