@@ -1,76 +1,72 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Assets.Scripts.ShopTypeEnum;
+using static ShopTypeEnum;
 
-namespace Assets.Scripts
+public class DraggNDrop : MonoBehaviour
 {
-    public class DraggNDrop : MonoBehaviour
+    #region Variables Unity
+
+    [SerializeField]
+    private ShopType _type;
+    [SerializeField]
+    private string _name;
+    #endregion
+
+    #region Constantes
+    public ShopObject ShopObject { get; set; }
+    #endregion
+
+    #region Eventos
+    // Start is called before the first frame update
+    void Start()
     {
-        #region Variables Unity
-        [SerializeField]
-        private ShopType _shopType;
-        [SerializeField]
-        private ShopObject _shopObject;
-        #endregion
-
-        #region Constantes
-        public ShopType ShopType { get => _shopType; set => _shopType = value; }
-        public ShopObject ShopObject { get => _shopObject; set => _shopObject = value; }  
-        #endregion
-
-        #region Eventos
-        // Start is called before the first frame update
-        void Start()
+        ShopObject = new ShopObject(_name, _type);
+        //Debug.Log("############### Start");
+        Debug.Log("############### ShopObject - " + ShopObject.Name);
+        Debug.Log("############### CurrentObject - " + GM.Gm.CurrentObject.Name);
+        if (ShopObject.Name == GM.Gm.CurrentObject.Name)
         {
-            //Debug.Log("############### Start");
-            Debug.Log("############### ShopObject - " + ShopObject.name);
-            Debug.Log("############### CurrentObject - " + GM.Gm.CurrentObject.name);
-            if (ShopObject.name == GM.Gm.CurrentObject.name)
-            {
-                gameObject.SetActive(true);
-                Debug.Log("############### Start true");
-            }
-            else
-            {
-                gameObject.SetActive(false);
-                Debug.Log("############### Start false");
-            }
+            gameObject.SetActive(true);
+            Debug.Log("############### Start true");
         }
-
-        // Update is called once per frame
-        void Update()
+        else
         {
-           
+            gameObject.SetActive(false);
+            Debug.Log("############### Start false");
         }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision == null)
-                throw new System.ArgumentNullException(nameof(collision));
-            else
-            {
-                Debug.Log("############### Collision enter");
-                if (collision.gameObject.Equals(ShopType))        
-                    GM.Gm.CorrectShop(ShopObject);                     
-                else
-                    GM.Gm.WrongShop(ShopObject);                
-                GM.Gm.NextObject();
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision == null)
-                throw new System.ArgumentNullException(nameof(collision));
-            else
-            {
-               if(GM.Gm.ShopList.Count == 0)
-                    SceneManager.LoadScene("############### Result");
-            }
-        }
-
-        #endregion
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null)
+            throw new System.ArgumentNullException(nameof(collision));
+        else
+        {
+            Debug.Log("############### Collision enter");
+            if (collision.gameObject.Equals(ShopObject.ShopType))
+                GM.Gm.CorrectShop(ShopObject);
+            else
+                GM.Gm.WrongShop(ShopObject);
+            GM.Gm.NextObject();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision == null)
+            throw new System.ArgumentNullException(nameof(collision));
+        else
+        {
+            if (GM.Gm.ShopList.Count == 0)
+                SceneManager.LoadScene("############### Result");
+        }
+    }
+
+    #endregion
 }

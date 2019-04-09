@@ -1,11 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using static Assets.Scripts.ShopTypeEnum;
+﻿using static ShopTypeEnum;
 /// <summary>
 /// Objeto de la lista de la compra.
 /// </summary>
-public class ShopObject : MonoBehaviour
+public class ShopObject
 {
     /// <summary>
     /// Nombre del objeto.
@@ -17,7 +14,8 @@ public class ShopObject : MonoBehaviour
     /// </summary>
     public ShopType ShopType { get; set; }
 
-    public ShopObject() { }
+    public ShopObject() {
+    }
 
     public ShopObject(string name, ShopType shopType)
     {

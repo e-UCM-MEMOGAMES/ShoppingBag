@@ -1,19 +1,16 @@
-﻿namespace Assets.Scripts
+﻿public class ShopTypeEnum
 {
-    public class ShopTypeEnum
+    /// <summary>
+    /// Tipos de tiendas disponibles.
+    /// </summary>
+    public enum ShopType
     {
-        /// <summary>
-        /// Tipos de tiendas disponibles.
-        /// </summary>
-        public enum ShopType
-        {
-            CARNICERIA,
-            ELECTRODOMESTICOS,
-            FARMACIA,
-            FRUTERIA,
-            PANADERIA,
-            PASTELERIA,
-            PESCADERIA
-        }
+        CARNICERIA,
+        ELECTRODOMESTICOS,
+        FARMACIA,
+        FRUTERIA,
+        PANADERIA,
+        PASTELERIA,
+        PESCADERIA
     }
 }
