@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using static ShopTypeEnum;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class DraggNDrop : MonoBehaviour
 {
     #region Variables Unity
@@ -13,7 +16,29 @@ public class DraggNDrop : MonoBehaviour
     #endregion
 
     #region Constantes
+
     public ShopObject ShopObject { get; set; }
+
+    private float OFFSET_Z { get { return 10.0f; } }
+
+    #endregion
+
+    #region Atributos
+
+    public bool ItsInTarget { get; set; }
+
+    /// <summary>
+    /// Posición inicial del movimiento.
+    /// </summary>
+    private Vector3 StartPoint { get; set; }
+
+    /// <summary>
+    /// Posición actual del movimiento.
+    /// </summary>
+    private Vector3 Offset { get; set; }
+
+    private Collider2D Collision { get; set; }
+
     #endregion
 
     #region Eventos
@@ -42,30 +67,57 @@ public class DraggNDrop : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /// <summary>
+    /// Evento cuando se clicka el objeto.
+    /// </summary>
+    private void OnMouseDown()
     {
-        if (collision == null)
-            throw new System.ArgumentNullException(nameof(collision));
-        else
+        StartPoint = transform.position;
+        Offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z));
+    }
+
+    /// <summary>
+    /// Evento cuando se mantiene pulsado el objeto.
+    /// </summary>
+    private void OnMouseDrag()
+    {
+        Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z);
+        transform.position = Camera.main.ScreenToWorldPoint(newPosition) + Offset;
+        transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+    }
+
+    /// <summary>
+    /// Evento cuando se deja de clickar el objeto.
+    /// </summary>
+    private void OnMouseUp()
+    {
+        transform.position = StartPoint;
+        if (ItsInTarget)
         {
-            Debug.Log("############### Collision enter");
-            if (collision.gameObject.Equals(ShopObject.ShopType))
+            Target target = Collision.gameObject.GetComponent<Target>();
+            if (target.Type.Equals(ShopObject.ShopType))
                 GM.Gm.CorrectShop(ShopObject);
             else
                 GM.Gm.WrongShop(ShopObject);
-            GM.Gm.NextObject();
+
+            try { GM.Gm.NextObject(); }
+            catch (Exception) { GM.Gm.LoadScene("Result"); }
         }
+        ItsInTarget = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Collision = collision ?? throw new ArgumentNullException(nameof(collision));
+        Debug.Log("############### Collision enter");
+        ItsInTarget = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision == null)
-            throw new System.ArgumentNullException(nameof(collision));
-        else
-        {
-            if (GM.Gm.ShopList.Count == 0)
-                SceneManager.LoadScene("############### Result");
-        }
+            throw new ArgumentNullException(nameof(collision));
+        ItsInTarget = false;
     }
 
     #endregion
