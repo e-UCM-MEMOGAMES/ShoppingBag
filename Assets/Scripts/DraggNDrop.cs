@@ -1,7 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using static ShopTypeEnum;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -13,6 +11,10 @@ public class DraggNDrop : MonoBehaviour
     private ShopType _type;
     [SerializeField]
     private string _name;
+
+    [SerializeField]
+    private LevelManager _levelManager;
+
     #endregion
 
     #region Constantes
@@ -39,6 +41,8 @@ public class DraggNDrop : MonoBehaviour
 
     private Collider2D Collision { get; set; }
 
+    private LevelManager LevelManager { get => _levelManager; }
+
     #endregion
 
     #region Eventos
@@ -49,7 +53,7 @@ public class DraggNDrop : MonoBehaviour
         //Debug.Log("############### Start");
         Debug.Log("############### ShopObject - " + ShopObject.Name);
         Debug.Log("############### CurrentObject - " + GM.Gm.CurrentObject.Name);
-        if (ShopObject.Name == GM.Gm.CurrentObject.Name)
+        if (ShopObject.Equals(GM.Gm.CurrentObject))
         {
             gameObject.SetActive(true);
             Debug.Log("############### Start true");
@@ -62,10 +66,7 @@ public class DraggNDrop : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     /// <summary>
     /// Evento cuando se clicka el objeto.
@@ -100,7 +101,11 @@ public class DraggNDrop : MonoBehaviour
             else
                 GM.Gm.WrongShop(ShopObject);
 
-            try { GM.Gm.NextObject(); }
+            try
+            {
+                GM.Gm.NextObject();
+                LevelManager.EnabledNextObjectGame();
+            }
             catch (Exception) { GM.Gm.LoadScene("Result"); }
         }
         ItsInTarget = false;
