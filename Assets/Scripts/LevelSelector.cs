@@ -28,13 +28,14 @@ public class LevelSelector : MonoBehaviour
     #region Métodos públicos
 
     /// <summary>
-    /// Comienza la partida.
+    /// Comienza el nivel.
     /// </summary>
-    public void Play()
+    /// <param name="level">Nivel.</param>
+    public void Play(string level)
     {
         GM.Gm.InitList();
-        LoadShopList();
-        SceneManager.LoadScene("Level1");
+        LoadShopList(level);
+        SceneManager.LoadScene(level);
     }
 
     #endregion
@@ -44,9 +45,10 @@ public class LevelSelector : MonoBehaviour
     /// <summary>
     /// Carga la lista de la compra de los recursos.
     /// </summary>
-    private void LoadShopList()
+    /// <param name="level">Nivel.</param>
+    private void LoadShopList(string level)
     {
-        TextAsset textlist = (TextAsset)Resources.Load(string.Concat("ShopLists/", "Level1"));
+        TextAsset textlist = (TextAsset)Resources.Load(string.Concat("ShopLists/", level));
         string txt = Encoding.UTF7.GetString(textlist.bytes);
         List<string> list = new List<string>(txt.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).Select(p => p.Trim()));
 
