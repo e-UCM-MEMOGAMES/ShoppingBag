@@ -1,4 +1,6 @@
 Naranja, frutería
-Pera, Fruteria
 Sardina, pescaderia
 Pan de molde, panaderia
+Ternera, Carnicería
+Cereza, Frutería
+Pollo, Carnicería
