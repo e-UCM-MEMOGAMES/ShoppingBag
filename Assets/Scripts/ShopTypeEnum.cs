@@ -6,11 +6,12 @@
     public enum ShopType
     {
         CARNICERIA,
-        ELECTRODOMESTICOS,
         FARMACIA,
+        FERRETERIA,
         FRUTERIA,
         PANADERIA,
         PASTELERIA,
+        PERFUMERIA,
         PESCADERIA
     }
 }

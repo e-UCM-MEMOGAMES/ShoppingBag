@@ -83,8 +83,10 @@ public class LevelSelector : MonoBehaviour
         {
             case "CARNICERIA":
                 return ShopType.CARNICERIA;
-            case "ELECTRODOMESTICOS":
-                return ShopType.ELECTRODOMESTICOS;
+            case "FERRETERIA":
+                return ShopType.FERRETERIA;
+            case "PERFUMERIA":
+                return ShopType.PERFUMERIA;
             case "FARMACIA":
                 return ShopType.FARMACIA;
             case "PANADERIA":
