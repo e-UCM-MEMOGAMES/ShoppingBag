@@ -274,7 +274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &211756860
 Transform:
   m_ObjectHideFlags: 0
@@ -505,10 +505,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8102054591269660396, guid: 00419b769f7d60a4cae23f805f9b1a66,
-          type: 3}
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1254773903}
+        m_MethodName: setInfo
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -932,6 +931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1254773901}
   - component: {fileID: 1254773902}
+  - component: {fileID: 1254773903}
   m_Layer: 0
   m_Name: Fondo
   m_TagString: Untagged
@@ -1010,6 +1010,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1254773903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254773900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdcc8a25f7814c49964cf8630ae536f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pan: {fileID: 211756859}
+  titulopan: {fileID: 1687065418}
+  play: {fileID: 303365649}
+  bocadillo:
+  - {fileID: 1744555635}
+  - {fileID: 1444290126}
+  - {fileID: 1548012462}
+  - {fileID: 1343692318}
+  - {fileID: 2108670788}
 --- !u!1 &1343692318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687065419
 RectTransform:
   m_ObjectHideFlags: 0
