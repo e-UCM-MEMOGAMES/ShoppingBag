@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   _name: Ternera
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &126184186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -409,11 +409,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _listObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _title: {fileID: 0}
+  - {fileID: 833503587}
+  - {fileID: 1654740955}
+  - {fileID: 1062977092}
+  - {fileID: 739494091}
+  - {fileID: 1446036003}
+  - {fileID: 1230811595}
+  - {fileID: 1739310305}
+  - {fileID: 1884505446}
+  - {fileID: 742224127}
+  - {fileID: 1103832647}
+  - {fileID: 126184182}
+  - {fileID: 1521998934}
+  - {fileID: 1987523896}
+  _title: {fileID: 1256787917}
 --- !u!4 &229430317
 Transform:
   m_ObjectHideFlags: 0
@@ -801,7 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: "Pi\xF1a"
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &739494095
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -923,7 +932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   _name: Salchicha
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &742224131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1142,9 +1151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0bbd760af3cb1418a6a50ec3954d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 6
+  _type: 7
   _name: Sardina
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &833503591
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1303,7 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: Pera
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1062977096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1567,7 +1576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   _name: Pollo
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1103832651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1831,7 +1840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: Fresa
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1230811599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1912,10 +1921,10 @@ RectTransform:
   m_Father: {fileID: 1983083603}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.58124995, y: 0.55124146}
-  m_AnchorMax: {x: 0.90024996, y: 0.67734486}
-  m_AnchoredPosition: {x: 66, y: -34}
-  m_SizeDelta: {x: -95.19418, y: -18.431015}
+  m_AnchorMin: {x: 0.62, y: 0.4635823}
+  m_AnchorMax: {x: 0.93775004, y: 0.58667076}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: -94.19418, y: -17.431015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256787917
 MonoBehaviour:
@@ -2316,7 +2325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: "Pl\xE1tano"
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1446036007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2722,7 +2731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 4
   _name: Pan
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1521998938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2932,7 +2941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: Naranja
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1654740959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3196,7 +3205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: Manzana
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1739310309
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3318,7 +3327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _name: Cereza
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1884505450
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3540,7 +3549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 4
   _name: Pan de molde
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 229430316}
 --- !u!212 &1987523900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3613,7 +3622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132846735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.222, y: -0.32188, z: 12.371}
+  m_LocalPosition: {x: 4.222, y: -0.74, z: 12.371}
   m_LocalScale: {x: 0.45011383, y: 0.45011383, z: 0.45011383}
   m_Children:
   - {fileID: 180316290}
