@@ -548,10 +548,10 @@ RectTransform:
   m_Father: {fileID: 1983083603}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8336371}
-  m_AnchorMax: {x: 1, y: 0.9620001}
-  m_AnchoredPosition: {x: 240.50015, y: 0.19998169}
-  m_SizeDelta: {x: -91.11017, y: 0.39999962}
+  m_AnchorMin: {x: 0.53875, y: 0.8403491}
+  m_AnchorMax: {x: 0.93775004, y: 0.96422493}
+  m_AnchoredPosition: {x: 1.5, y: -1.8000183}
+  m_SizeDelta: {x: 389.88983, y: 2.4000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623031245
 MonoBehaviour:
@@ -586,7 +586,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lista de la compra
+  m_Text: "\xBFD\xF3nde comprar\xEDas este producto?"
 --- !u!222 &623031246
 CanvasRenderer:
   m_ObjectHideFlags: 0
