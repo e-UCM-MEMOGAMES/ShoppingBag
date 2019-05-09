@@ -274,7 +274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &211756860
 Transform:
   m_ObjectHideFlags: 0
@@ -289,8 +289,8 @@ Transform:
   m_Father: {fileID: 10345492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &211756861
-BoxCollider2D:
+--- !u!60 &211756861
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -299,10 +299,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03169346, y: 0.027781487}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -312,9 +312,76 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 12.863386, y: 5.6331778}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.22, y: -4.41}
+      - {x: -2.01, y: -4.2599998}
+      - {x: -1.78, y: -4.08}
+      - {x: -0.66999996, y: -2.97}
+      - {x: -0.65999997, y: -2.97}
+      - {x: 3.1, y: 0.78999996}
+      - {x: 3.1, y: 0.79999995}
+      - {x: 4.0699997, y: 1.77}
+      - {x: 4.23, y: 1.9499999}
+      - {x: 4.3199997, y: 2.07}
+      - {x: 4.37, y: 2.1499999}
+      - {x: 4.46, y: 2.28}
+      - {x: 4.5299997, y: 2.3999999}
+      - {x: 4.67, y: 2.7}
+      - {x: 4.74, y: 2.86}
+      - {x: 4.79, y: 3.06}
+      - {x: 4.83, y: 3.23}
+      - {x: 4.85, y: 3.35}
+      - {x: 4.8599997, y: 3.4299998}
+      - {x: 4.87, y: 3.6}
+      - {x: 4.87, y: 3.6699998}
+      - {x: 4.85, y: 3.8899999}
+      - {x: 4.8199997, y: 4.04}
+      - {x: 4.75, y: 4.24}
+      - {x: 4.69, y: 4.36}
+      - {x: 4.5699997, y: 4.5099998}
+      - {x: 4.42, y: 4.63}
+      - {x: 4.22, y: 4.72}
+      - {x: 3.9299998, y: 4.7799997}
+      - {x: 3.57, y: 4.7799997}
+      - {x: 3.5, y: 4.77}
+      - {x: 3.31, y: 4.74}
+      - {x: 3.21, y: 4.72}
+      - {x: 3.05, y: 4.68}
+      - {x: 2.87, y: 4.62}
+      - {x: 2.78, y: 4.58}
+      - {x: 2.48, y: 4.44}
+      - {x: 2.36, y: 4.37}
+      - {x: 2.18, y: 4.25}
+      - {x: 1.9, y: 4.0299997}
+      - {x: -3.9299998, y: -1.8}
+      - {x: -4.08, y: -1.9799999}
+      - {x: -4.19, y: -2.12}
+      - {x: -4.3199997, y: -2.32}
+      - {x: -4.38, y: -2.4199998}
+      - {x: -4.5, y: -2.6699998}
+      - {x: -4.58, y: -2.87}
+      - {x: -4.61, y: -2.96}
+      - {x: -4.66, y: -3.1399999}
+      - {x: -4.7, y: -3.35}
+      - {x: -4.71, y: -3.4299998}
+      - {x: -4.72, y: -3.54}
+      - {x: -4.72, y: -3.76}
+      - {x: -4.71, y: -3.87}
+      - {x: -4.69, y: -4.0099998}
+      - {x: -4.68, y: -4.0899997}
+      - {x: -4.58, y: -4.33}
+      - {x: -4.5499997, y: -4.38}
+      - {x: -4.48, y: -4.48}
+      - {x: -4.39, y: -4.56}
+      - {x: -4.3199997, y: -4.62}
+      - {x: -4.16, y: -4.7}
+      - {x: -4.02, y: -4.7599998}
+      - {x: -3.85, y: -4.7999997}
+      - {x: -3.33, y: -4.7999997}
+      - {x: -3.29, y: -4.79}
+      - {x: -2.9099998, y: -4.72}
+      - {x: -2.56, y: -4.5899997}
 --- !u!114 &211756862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,9 +711,9 @@ GameObject:
   m_Component:
   - component: {fileID: 444190924}
   - component: {fileID: 444190925}
-  - component: {fileID: 444190927}
   - component: {fileID: 444190926}
   - component: {fileID: 444190928}
+  - component: {fileID: 444190927}
   m_Layer: 0
   m_Name: "Panader\xEDa"
   m_TagString: Untagged
@@ -737,8 +804,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &444190927
-BoxCollider2D:
+--- !u!60 &444190927
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -747,22 +814,61 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.4, y: 7.88}
+    oldSize: {x: 8.56, y: 7.45}
     newSize: {x: 9.4, y: 7.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.94, y: 4.72}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.9499998, y: 0.24499999}
+      - {x: 4.0299997, y: 0.265}
+      - {x: 4.08, y: 0.285}
+      - {x: 4.15, y: 0.325}
+      - {x: 4.24, y: 0.415}
+      - {x: 4.2799997, y: 0.49499997}
+      - {x: 4.2799997, y: 0.765}
+      - {x: 4.23, y: 0.895}
+      - {x: 4.0899997, y: 1.255}
+      - {x: 4.0699997, y: 1.305}
+      - {x: 4.02, y: 1.435}
+      - {x: 3.9299998, y: 1.665}
+      - {x: 3.8799999, y: 1.795}
+      - {x: 3.79, y: 2.0249999}
+      - {x: 3.74, y: 2.155}
+      - {x: 3.6499999, y: 2.385}
+      - {x: 3.6, y: 2.5149999}
+      - {x: 3.51, y: 2.745}
+      - {x: 3.36, y: 3.135}
+      - {x: 3.37, y: 3.2849998}
+      - {x: 3.36, y: 3.725}
+      - {x: -3.3899999, y: 3.725}
+      - {x: -3.3899999, y: 3.195}
+      - {x: -3.4299998, y: 3.105}
+      - {x: -3.58, y: 2.715}
+      - {x: -3.86, y: 2.0049999}
+      - {x: -4.2799997, y: 0.945}
+      - {x: -4.2799997, y: 0.48499998}
+      - {x: -4.25, y: 0.415}
+      - {x: -4.15, y: 0.325}
+      - {x: -4.1, y: 0.275}
+      - {x: -3.9599998, y: 0.235}
+      - {x: -3.62, y: 0.24499999}
+      - {x: -3.57, y: 0.255}
+      - {x: -3.51, y: 0.275}
+      - {x: -3.51, y: -3.725}
+      - {x: 3.47, y: -3.725}
+      - {x: 3.47, y: 0.295}
+      - {x: 3.5, y: 0.275}
+      - {x: 3.61, y: 0.24499999}
 --- !u!114 &444190928
 MonoBehaviour:
   m_ObjectHideFlags: 0

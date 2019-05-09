@@ -2,7 +2,7 @@
 using UnityEngine;
 using static ShopTypeEnum;
 
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(PolygonCollider2D))]
 public class DraggNDrop : MonoBehaviour
 {
     #region Variables Unity
@@ -92,7 +92,6 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseUp()
     {
-        transform.position = StartPoint;
         if (ItsInTarget)
         {
             Target target = Collision.gameObject.GetComponent<Target>();
@@ -108,13 +107,13 @@ public class DraggNDrop : MonoBehaviour
             }
             catch (Exception) { GM.Gm.LoadScene("Result"); }
         }
+        transform.position = StartPoint;
         ItsInTarget = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Collision = collision ?? throw new ArgumentNullException(nameof(collision));
-        Debug.Log("############### Collision enter");
         ItsInTarget = true;
     }
 
@@ -123,6 +122,16 @@ public class DraggNDrop : MonoBehaviour
         if (collision == null)
             throw new ArgumentNullException(nameof(collision));
         ItsInTarget = false;
+    }
+
+   private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision == null)
+            ItsInTarget = false;
+        else
+        {
+            ItsInTarget = true;
+        }
     }
 
     #endregion
