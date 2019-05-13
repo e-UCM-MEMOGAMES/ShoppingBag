@@ -34,6 +34,8 @@ public class GM : MonoBehaviour
     /// </summary>
     private List<ShopObject> WrongList { get; set; } = new List<ShopObject>();
 
+    public string Level { get; set; }
+
     #endregion
 
     #region Eventos
@@ -54,6 +56,7 @@ public class GM : MonoBehaviour
     private void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
+        PlayerPrefs.DeleteAll();
     }
 
     #endregion
@@ -126,6 +129,34 @@ public class GM : MonoBehaviour
             sb.AppendLine(string.Concat("- ", obj.Name));
         });
         return sb.ToString();
+    }
+
+    public void PutResult()
+    {
+        double maxResult = CorrectList.Count + WrongList.Count;
+        if (!PlayerPrefs.HasKey(Level + "Star") || (PlayerPrefs.HasKey(Level + "Star") && PlayerPrefs.GetInt(Level + "Star") < CorrectList.Count))
+        {
+            if (CorrectList.Count == maxResult)
+            {
+                PlayerPrefs.SetInt(Level, 1);
+                PlayerPrefs.SetInt(Level + "Star", 3);
+            }
+            else if (CorrectList.Count < maxResult && CorrectList.Count >= (maxResult * (2.0 / 3.0)))
+            {
+                PlayerPrefs.SetInt(Level, 1);
+                PlayerPrefs.SetInt(Level + "Star", 2);
+            }
+            else if (CorrectList.Count < (maxResult * (2.0 / 3.0)) && CorrectList.Count >= (maxResult * (1.0 / 3.0)))
+            {
+                PlayerPrefs.SetInt(Level, 0);
+                PlayerPrefs.SetInt(Level + "Star", 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt(Level, 0);
+                PlayerPrefs.SetInt(Level + "Star", 0);
+            }
+        }
     }
 
     public string WrongListResult()
