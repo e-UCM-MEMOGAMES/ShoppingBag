@@ -2,7 +2,7 @@
 using UnityEngine;
 using static ShopTypeEnum;
 
-[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class DraggNDrop : MonoBehaviour
 {
     #region Variables Unity

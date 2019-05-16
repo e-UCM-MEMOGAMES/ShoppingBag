@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using static ShopTypeEnum;
 
-[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class Target : MonoBehaviour
 {
     [SerializeField]
