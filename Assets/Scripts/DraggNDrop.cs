@@ -105,7 +105,10 @@ public class DraggNDrop : MonoBehaviour
                 GM.Gm.NextObject();
                 LevelManager.EnabledNextObjectGame();
             }
-            catch (Exception) { GM.Gm.LoadScene("Result"); }
+            catch (Exception) {
+                GM.Gm.PutResult();
+                GM.Gm.LoadScene("Result");
+            }
         }
         transform.position = StartPoint;
         ItsInTarget = false;

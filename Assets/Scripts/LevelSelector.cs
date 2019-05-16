@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static ShopTypeEnum;
 
 public class LevelSelector : MonoBehaviour
@@ -15,11 +16,24 @@ public class LevelSelector : MonoBehaviour
     /// </summary>
     private Regex RegNoAccent { get; } = new Regex("[^a-zA-Z0-9 ]");
 
+    [SerializeField]
+    private List<GameObject> _listLevel;
+
+    [SerializeField]
+    private Sprite _levelblock;
+
+    public List<GameObject> ListLevel { get => _listLevel; set => _listLevel = value; }
+
+    public Sprite LevelBlock { get => _levelblock; set => _levelblock = value; }
+
     #endregion
 
     #region Eventos
 
-    void Start() { }
+    void Start()
+    {
+        ComprobarNiveles();
+    }
 
     void Update() { }
 
@@ -34,6 +48,7 @@ public class LevelSelector : MonoBehaviour
     public void Play(string level)
     {
         GM.Gm.InitList();
+        GM.Gm.Level = level;
         LoadShopList(level);
         SceneManager.LoadScene(level);
     }
@@ -97,6 +112,30 @@ public class LevelSelector : MonoBehaviour
                 return ShopType.PASTELERIA;
             default:
                 return ShopType.PESCADERIA;
+        }
+    }
+
+    private void ComprobarNiveles()
+    {
+        int i = 1;
+        foreach (GameObject level in ListLevel)
+        {
+            List<Image> starlist = level.GetComponentsInChildren<Image>().ToList(); 
+            string nivelAnterior = "Level" + (i - 1);
+            if (i == 1 || (PlayerPrefs.HasKey(nivelAnterior) && PlayerPrefs.GetInt(nivelAnterior) > 0))
+            {
+                string nivel = "Level" + i;
+                // desbloqueamos nivel
+                int numberStar = PlayerPrefs.HasKey(nivel + "Star") ? PlayerPrefs.GetInt(nivel + "Star") : 0;
+                for (int j = 1; j < numberStar + 1; ++j)
+                    starlist[j].color = Color.white;
+            }
+            else
+            {
+                starlist[0].sprite = LevelBlock;
+                level.GetComponent<Button>().interactable = false;
+            }
+            ++i;
         }
     }
 

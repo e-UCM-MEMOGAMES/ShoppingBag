@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Result : MonoBehaviour
@@ -15,6 +16,9 @@ public class Result : MonoBehaviour
     private Text _erroneoList;
     [SerializeField]
     private Text _all;
+
+    [SerializeField]
+    private List<Image> _stars;
 
     #endregion
 
@@ -39,6 +43,8 @@ public class Result : MonoBehaviour
     /// Lista de los objetos erróneos.
     /// </summary>
     public Text ErroneoList { get => _erroneoList; set => _erroneoList = value; }
+
+    public List<Image> Stars { get => _stars; set => _stars = value; }
 
     /// <summary>
     /// Mensaje si han acertado o fallado todos los objetos.
@@ -67,6 +73,12 @@ public class Result : MonoBehaviour
             ErroneoList.enabled = true;
             ErroneoList.text = wrongList;
             All.enabled = false;
+        }
+
+        int numberStar = PlayerPrefs.GetInt(GM.Gm.Level + "Star");
+        for(int i = 0; i < numberStar; ++i)
+        {
+            Stars[i].color = Color.white;
         }
     }
 
