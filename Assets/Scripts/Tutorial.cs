@@ -1,22 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject pan;
     public GameObject titulopan;
     public GameObject play;
-    public GameObject[] bocadillo;
+    public Text textTutorial;
 
     int paso;
     // Start is called before the first frame update
     void Start()
     {
         paso = 0;
-        bocadillo[0].SetActive(true);
-        pan.SetActive(false);
+        textTutorial.text = "Hoy tendrá que ser capaz de comprar el pan";
+        pan.SetActive(true);
         titulopan.SetActive(false);
+        
     }
 
     public void setInfo()
@@ -24,22 +25,19 @@ public class Tutorial : MonoBehaviour
         if (paso == 0)
         {
             //Debug.Log("############ paso 1");
-            bocadillo[0].SetActive(false);
-            bocadillo[1].SetActive(true);
+            textTutorial.text = "Para ello necesitará encontrar la panadería";
             paso++;
         }
         else if (paso == 1)
         {
             //Debug.Log("############ paso 2");
-            bocadillo[1].SetActive(false);
-            bocadillo[2].SetActive(true);
+            textTutorial.text = "Cuando la encuentre, deberá arrastrar el pan al edificio";
             paso++;
         }
         else if (paso == 2)
         {
             //Debug.Log("############ paso 3");
-            bocadillo[2].SetActive(false);
-            bocadillo[3].SetActive(true);
+            textTutorial.text = "¡Enhorabuena! Ha comprado el pan";
             pan.SetActive(true);
             titulopan.SetActive(true);
             play.SetActive(false);
