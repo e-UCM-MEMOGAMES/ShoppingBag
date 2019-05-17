@@ -14,7 +14,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         paso = 0;
-        textTutorial.text = "Hoy tendrá que ser capaz de comprar el pan";
+        textTutorial.text = "Hoy tendrá que ser capaz de encontrar el lugar donde venden pan";
         pan.SetActive(true);
         titulopan.SetActive(false);
         
@@ -25,7 +25,7 @@ public class Tutorial : MonoBehaviour
         if (paso == 0)
         {
             //Debug.Log("############ paso 1");
-            textTutorial.text = "Para ello necesitará encontrar la panadería";
+            textTutorial.text = "Para ello, necesitará encontrar la panadería";
             paso++;
         }
         else if (paso == 1)
@@ -37,7 +37,7 @@ public class Tutorial : MonoBehaviour
         else if (paso == 2)
         {
             //Debug.Log("############ paso 3");
-            textTutorial.text = "¡Enhorabuena! Ha comprado el pan";
+            textTutorial.text = "Consejo: mantener pulsado el objeto para poder desplazarlo a su tienda";
             pan.SetActive(true);
             titulopan.SetActive(true);
             play.SetActive(false);
