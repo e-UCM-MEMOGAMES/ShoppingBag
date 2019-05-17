@@ -10,7 +10,7 @@
         FERRETERIA,
         FRUTERIA,
         PANADERIA,
-        PASTELERIA,
+        PAPELERIA,
         PERFUMERIA,
         PESCADERIA
     }

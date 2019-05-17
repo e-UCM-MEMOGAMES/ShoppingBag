@@ -108,8 +108,8 @@ public class LevelSelector : MonoBehaviour
                 return ShopType.PANADERIA;
             case "FRUTERIA":
                 return ShopType.FRUTERIA;
-            case "PASTELERIA":
-                return ShopType.PASTELERIA;
+            case "PAPELERIA":
+                return ShopType.PAPELERIA;
             default:
                 return ShopType.PESCADERIA;
         }
@@ -120,7 +120,7 @@ public class LevelSelector : MonoBehaviour
         int i = 1;
         foreach (GameObject level in ListLevel)
         {
-            List<Image> starlist = level.GetComponentsInChildren<Image>().ToList(); 
+            List<Image> starlist = level.GetComponentsInChildren<Image>().ToList();
             string nivelAnterior = "Level" + (i - 1);
             if (i == 1 || (PlayerPrefs.HasKey(nivelAnterior) && PlayerPrefs.GetInt(nivelAnterior) > 0))
             {
