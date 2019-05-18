@@ -15,7 +15,7 @@ public class Tutorial : MonoBehaviour
     {
         paso = 0;
         textTutorial.text = "Hoy tendrá que ser capaz de encontrar el lugar donde venden pan";
-        pan.SetActive(true);
+        pan.SetActive(false);
         titulopan.SetActive(false);
         
     }
