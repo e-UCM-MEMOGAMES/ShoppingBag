@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using RAGE.Analytics;
 
 public class GM : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class GM : MonoBehaviour
     /// <param name="scene">Nombre de la escena a la que se va a cambiar.</param>
     public void LoadScene(string scene)
     {
+        Tracker.T.Accessible.Accessed(scene, AccessibleTracker.Accessible.Screen);
         SceneManager.LoadScene(scene);
     }
 
@@ -77,6 +79,7 @@ public class GM : MonoBehaviour
     /// </summary>
     public void DoExitGame()
     {
+        Tracker.T.setVar("ExitGame", 1);
         Application.Quit();
     }
 
@@ -85,6 +88,7 @@ public class GM : MonoBehaviour
     /// </summary>
     public void InitList()
     {
+        Tracker.T.setVar("InitList", 1);
         ShopList.Clear();
         CorrectList.Clear();
         WrongList.Clear();
@@ -107,6 +111,8 @@ public class GM : MonoBehaviour
     /// <param name="obj">Objeto acertado.</param>
     public void CorrectShop(ShopObject obj)
     {
+        Tracker.T.setVar(obj.Name, 1);
+        Tracker.T.setVar("CorrectList", 1);
         CorrectList.Add(obj);
     }
 
@@ -116,6 +122,8 @@ public class GM : MonoBehaviour
     /// <param name="obj">Objeto erróneo.</param>
     public void WrongShop(ShopObject obj)
     {
+        Tracker.T.setVar(obj.Name, 1);
+        Tracker.T.setVar("WrongList", 1);
         WrongList.Add(obj);
     }
 
@@ -140,22 +148,32 @@ public class GM : MonoBehaviour
             {
                 PlayerPrefs.SetInt(Level, 1);
                 PlayerPrefs.SetInt(Level + "Star", 3);
+                Tracker.T.setVar("Estrellas " + Level, 3);
+                Tracker.T.Completable.Completed(Level, CompletableTracker.Completable.Level, true);
             }
             else if (CorrectList.Count < maxResult && CorrectList.Count >= (maxResult * (2.0 / 3.0)))
             {
                 PlayerPrefs.SetInt(Level, 1);
                 PlayerPrefs.SetInt(Level + "Star", 2);
+                Tracker.T.setVar("Estrellas " + Level, 2);
+                Tracker.T.Completable.Completed(Level, CompletableTracker.Completable.Level, true);
             }
             else if (CorrectList.Count < (maxResult * (2.0 / 3.0)) && CorrectList.Count >= (maxResult * (1.0 / 3.0)))
             {
                 PlayerPrefs.SetInt(Level, 0);
                 PlayerPrefs.SetInt(Level + "Star", 1);
+                Tracker.T.setVar("Estrellas " + Level, 1);
+                Tracker.T.Completable.Completed(Level, CompletableTracker.Completable.Level, false);
             }
             else
             {
                 PlayerPrefs.SetInt(Level, 0);
                 PlayerPrefs.SetInt(Level + "Star", 0);
-            }
+                Tracker.T.setVar("Estrellas " + Level, 0);
+                Tracker.T.Completable.Completed(Level, CompletableTracker.Completable.Level, false);
+            }            
+
+            
         }
     }
 
