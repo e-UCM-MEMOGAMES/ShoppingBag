@@ -587,10 +587,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 1f57874a-bbdf-4805-905b-843d9a7cc5d5
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: ShoppingBag
+  organizationId: shachio
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
